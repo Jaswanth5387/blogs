@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"C:\\\\Users\\\\anush\\\\Downloads\\\\blogs\\\\kv-cache-blog\" -Depth 2 -File -Exclude \".next\",\"node_modules\" | Where-Object {$_.Extension -match \"\\\\.\\(tsx?|jsx?|json|md|css|html\\)$\"} | Select-Object -Property Name, Directory | Sort-Object Directory, Name)",
+      "PowerShell(Out-Null *)",
+      "PowerShell(Stop-Process *)",
+      "PowerShell(Receive-Job *)",
+      "PowerShell(New-Item *)",
+      "Skill(run)",
+      "PowerShell(Start-Process \"http://localhost:3000\")",
+      "PowerShell(Start-Sleep -Seconds 5; try { $r = Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 8 -UseBasicParsing; \"HTTP $\\($r.StatusCode\\) — $\\($r.Content.Length\\) bytes\" } catch { \"Not ready yet: $_\" })",
+      "PowerShell(cd \"C:\\\\Users\\\\anush\\\\Downloads\\\\blogs\\\\kv-cache-blog\"; $proc = Start-Process -FilePath \"node.exe\" -ArgumentList \".\\\\node_modules\\\\.bin\\\\next.cmd\", \"dev\" -WindowStyle Hidden -PassThru; Write-Host \"PID: $\\($proc.Id\\)\"; Start-Sleep -Seconds 10; try { $r = Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 12 -UseBasicParsing; \"HTTP $\\($r.StatusCode\\) — $\\($r.Content.Length\\) bytes\" } catch { \"Error: $_\" })",
+      "PowerShell(Start-Sleep -Seconds 8; try { $r = Invoke-WebRequest -Uri 'http://localhost:3000' -TimeoutSec 15 -UseBasicParsing; \"HTTP $\\($r.StatusCode\\) — $\\($r.Content.Length\\) bytes\" } catch { \"Error: $_\" })",
+      "PowerShell(netstat *)",
+      "PowerShell(Get-Process *)",
+      "PowerShell(try { $r = Invoke-WebRequest -Uri 'http://127.0.0.1:3000' -TimeoutSec 20 -UseBasicParsing; \"HTTP $\\($r.StatusCode\\) — $\\($r.Content.Length\\) bytes\" } catch { \"Error: $\\($_.Exception.Message.Substring\\(0,[Math]::Min\\(200,$_.Exception.Message.Length\\)\\)\\)\" })",
+      "PowerShell(Get-Content *)",
+      "PowerShell(try { $r = Invoke-WebRequest 'http://127.0.0.1:3000' -TimeoutSec 20 -UseBasicParsing -MaximumRedirection 5; \"HTTP $\\($r.StatusCode\\) — $\\($r.Content.Length\\) bytes\" } catch { $resp = $_.Exception.Response; if \\($resp\\) { $s = $resp.GetResponseStream\\(\\); $reader = New-Object System.IO.StreamReader\\($s\\); $body = $reader.ReadToEnd\\(\\); \"Status $\\($resp.StatusCode\\): $\\($body.Substring\\(0,[Math]::Min\\(300,$body.Length\\)\\)\\)\" } else { \"Err: $\\($_.Exception.Message.Substring\\(0,200\\)\\)\" } })",
+      "PowerShell(git *)",
+      "PowerShell(gh *)"
+    ]
+  }
+}
