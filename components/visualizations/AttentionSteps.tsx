@@ -65,7 +65,7 @@ export default function AttentionSteps() {
         ))}
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem', alignItems: 'start' }}>
+      <div className="viz-grid-2col">
         {/* Left — explanation */}
         <div>
           <AnimatePresence mode="wait">

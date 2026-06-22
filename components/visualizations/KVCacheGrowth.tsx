@@ -118,7 +118,7 @@ export default function KVCacheGrowth() {
       </div>
 
       {/* 3-column layout */}
-      <div style={{ display: 'grid', gridTemplateColumns: '1fr 80px 1fr', gap: '1.25rem', alignItems: 'start' }}>
+      <div className="viz-grid-3col">
 
         {/* Token stream */}
         <div>

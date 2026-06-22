@@ -17,7 +17,9 @@
       "PowerShell(Get-Content *)",
       "PowerShell(try { $r = Invoke-WebRequest 'http://127.0.0.1:3000' -TimeoutSec 20 -UseBasicParsing -MaximumRedirection 5; \"HTTP $\\($r.StatusCode\\) — $\\($r.Content.Length\\) bytes\" } catch { $resp = $_.Exception.Response; if \\($resp\\) { $s = $resp.GetResponseStream\\(\\); $reader = New-Object System.IO.StreamReader\\($s\\); $body = $reader.ReadToEnd\\(\\); \"Status $\\($resp.StatusCode\\): $\\($body.Substring\\(0,[Math]::Min\\(300,$body.Length\\)\\)\\)\" } else { \"Err: $\\($_.Exception.Message.Substring\\(0,200\\)\\)\" } })",
       "PowerShell(git *)",
-      "PowerShell(gh *)"
+      "PowerShell(gh *)",
+      "WebFetch(domain:blogs-jaswanth3.vercel.app)",
+      "PowerShell(npm run *)"
     ]
   }
 }

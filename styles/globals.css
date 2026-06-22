@@ -4,7 +4,7 @@
 
 :root {
   color-scheme: light;
-  font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-family: var(--font-inter), Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
 }
 
 html {
@@ -43,40 +43,71 @@ html, body {
   .page-article { padding: 2rem 1.25rem 3rem; }
 }
 
+/* ─── Hero ───────────────────────────────────────────────────────────────── */
+
+.article-hero {
+  padding: 1rem 0 2rem;
+}
+
+.article-divider {
+  height: 1px;
+  background: linear-gradient(to right, #dbeafe, #e2e8f0 40%, transparent 100%);
+  margin-bottom: 2.5rem;
+}
+
+.hero-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1.25rem;
+}
+
+.hero-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.3rem 0.85rem;
+  border-radius: 9999px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
 /* ─── Badge / lead ───────────────────────────────────────────────────────── */
 
 .badge {
   display: inline-flex;
   align-items: center;
-  margin-bottom: 1.25rem;
-  padding: 0.35rem 1rem;
+  margin-bottom: 1rem;
+  padding: 0.3rem 0.9rem;
   border-radius: 9999px;
   background: linear-gradient(135deg, #dbeafe, #eff6ff);
   color: #1d4ed8;
   font-weight: 700;
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  font-size: 0.75rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
   border: 1px solid #bfdbfe;
 }
 
 h1 {
-  font-size: clamp(2rem, 4.5vw, 3rem);
+  font-size: clamp(1.9rem, 4.5vw, 2.9rem);
   font-weight: 900;
-  line-height: 1.05;
-  letter-spacing: -0.025em;
+  line-height: 1.07;
+  letter-spacing: -0.03em;
   color: #0f172a;
   margin-top: 0;
-  margin-bottom: 1rem;
+  margin-bottom: 0.9rem;
 }
 
 .lead {
-  font-size: 1.1rem;
-  line-height: 1.75;
+  font-size: 1.075rem;
+  line-height: 1.8;
   color: #475569;
-  margin-top: 0.5rem;
-  margin-bottom: 2rem;
-  max-width: 68ch;
+  margin-top: 0;
+  margin-bottom: 0;
+  max-width: 66ch;
 }
 
 /* ─── Markdown body ──────────────────────────────────────────────────────── */
@@ -319,4 +350,69 @@ h1 {
 @keyframes pulse-dot {
   0%, 100% { transform: scale(1); opacity: 1; }
   50% { transform: scale(1.4); opacity: 0.7; }
+}
+
+/* ─── Mobile responsiveness ──────────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .page-container {
+    padding: 0.75rem 0.5rem 3rem;
+  }
+
+  .page-article {
+    border-radius: 16px;
+    padding: 1.5rem 1.1rem 2.5rem;
+  }
+
+  h1 {
+    font-size: 1.75rem;
+  }
+
+  .lead {
+    font-size: 1rem;
+  }
+
+  .markdown-body h2 {
+    font-size: 1.25rem;
+    margin-top: 2.25rem;
+  }
+
+  .markdown-body h3 {
+    font-size: 1.05rem;
+  }
+
+  /* Force all viz grids to single column on mobile */
+  .demo-callout [style*="grid-template-columns"] {
+    grid-template-columns: 1fr !important;
+  }
+
+  .demo-callout [style*="display: grid"] {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ─── Viz component mobile overrides ────────────────────────────────────── */
+
+.viz-grid-2col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.viz-grid-3col {
+  display: grid;
+  grid-template-columns: 1fr 80px 1fr;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+@media (max-width: 600px) {
+  .viz-grid-2col {
+    grid-template-columns: 1fr;
+  }
+
+  .viz-grid-3col {
+    grid-template-columns: 1fr;
+  }
 }

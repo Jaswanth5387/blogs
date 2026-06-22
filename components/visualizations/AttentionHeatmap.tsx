@@ -148,7 +148,7 @@ export default function AttentionHeatmap() {
       />
 
       {/* Main content */}
-      <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'flex-start' }}>
+      <div style={{ display: 'flex', gap: '1.5rem', flexWrap: 'wrap', alignItems: 'flex-start', minWidth: 0 }}>
         {/* Heatmap SVG */}
         <div style={{ overflowX: 'auto', flexShrink: 0 }}>
           <svg width={W} height={H} style={{ display: 'block' }}>

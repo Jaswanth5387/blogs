@@ -1,5 +1,8 @@
 import '../styles/globals.css'
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+
+const inter = Inter({ subsets: ['latin'], variable: '--font-inter' })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com'
 
@@ -25,7 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <head>
         <link rel="canonical" href={siteUrl} />
       </head>
