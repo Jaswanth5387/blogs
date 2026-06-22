@@ -19,7 +19,8 @@
       "PowerShell(git *)",
       "PowerShell(gh *)",
       "WebFetch(domain:blogs-jaswanth3.vercel.app)",
-      "PowerShell(npm run *)"
+      "PowerShell(npm run *)",
+      "PowerShell(git push *)"
     ]
   }
 }

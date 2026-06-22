@@ -1,5 +1,6 @@
 import { getArticleSections } from '../content/final-blog'
 import ArticleWithDemos from '../components/ArticleWithDemos'
+import StoryCarousel from '../components/StoryCarousel'
 
 export default function Home() {
   const sections = getArticleSections()
@@ -22,6 +23,12 @@ export default function Home() {
         </div>
 
         <div className="article-divider" />
+
+        <StoryCarousel />
+
+        <div className="deep-dive-marker">
+          <span>Full deep dive ↓</span>
+        </div>
 
         <ArticleWithDemos sections={sections} />
       </article>
